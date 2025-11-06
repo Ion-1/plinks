@@ -1,0 +1,59 @@
+Windows Registry Editor Version 5.00
+
+; https://kolbi.cz/blog/2019/01/27/register-a-portable-browser-and-make-it-the-default/
+
+[HKEY_CURRENT_USER\Software\RegisteredApplications]
+"PlinksPortable"="Software\\Clients\\StartMenuInternet\\PlinksPortable\\Capabilities"
+
+[HKEY_CURRENT_USER\Software\Clients\StartMenuInternet\PlinksPortable]
+@="Plinks Portable"
+ [HKEY_CURRENT_USER\Software\Clients\StartMenuInternet\PlinksPortable\Capabilities]
+"ApplicationDescription"="Plinks Portable"
+"ApplicationIcon"="C:\\Portables\\Plinks\\Plinks.exe,0"
+"ApplicationName"="Plinks Portable"
+ [HKEY_CURRENT_USER\Software\Clients\StartMenuInternet\PlinksPortable\Capabilities\FileAssociations]
+; All FileAssociations supported by Firefox
+".avif"="PlinksPortableHTM"
+".htm"="PlinksPortableHTM"
+".html"="PlinksPortableHTM"
+".pdf"="PlinksPortableHTM"
+".shtml"="PlinksPortableHTM"
+".svg"="PlinksPortableHTM"
+".webp"="PlinksPortableHTM"
+".xht"="PlinksPortableHTM"
+".xhtml"="PlinksPortableHTM"
+ [HKEY_CURRENT_USER\Software\Clients\StartMenuInternet\PlinksPortable\Capabilities\Startmenu]
+"StartMenuInternet"="PlinksPortable"
+ [HKEY_CURRENT_USER\Software\Clients\StartMenuInternet\PlinksPortable\Capabilities\URLAssociations]
+; you can add additional protocols like mailto for example
+"http"="PlinksPortableHTM"
+"https"="PlinksPortableHTM"
+"mailto"="PlinksPortableHTM"
+ [HKEY_CURRENT_USER\Software\Clients\StartMenuInternet\PlinksPortable\DefaultIcon]
+@="C:\\Portables\\Plinks\\Plinks.exe,0"
+
+[HKEY_CURRENT_USER\Software\Clients\StartMenuInternet\PlinksPortable\shell]
+
+[HKEY_CURRENT_USER\Software\Clients\StartMenuInternet\PlinksPortable\shell\open]
+
+[HKEY_CURRENT_USER\Software\Clients\StartMenuInternet\PlinksPortable\shell\open\command]
+@="\"C:\\Portables\\Plinks\\Plinks.exe\""
+
+[HKEY_CURRENT_USER\Software\Classes\PlinksPortableHTM]
+@="PlinksPortable"
+"AppUserModelId"="PlinksPortable"
+
+[HKEY_CURRENT_USER\Software\Classes\PlinksPortableHTM\Application]
+"AppUserModelId"="PlinksPortable"
+"ApplicationIcon"="C:\\Portables\\Plinks\\Plinks.exe,0"
+"ApplicationName"="PlinksPortable"
+"ApplicationDescription"="Open links in your preferred browser profile combination"
+"ApplicationCompany"="Plinks Portable"
+
+[HKEY_CURRENT_USER\Software\Classes\PlinksPortableHTM\DefaultIcon]
+@="C:\\Portables\\Plinks\\Plinks.exe,0"
+[HKEY_CURRENT_USER\Software\Classes\PlinksPortableHTM\shell]
+[HKEY_CURRENT_USER\Software\Classes\PlinksPortableHTM\shell\open]
+[HKEY_CURRENT_USER\Software\Classes\PlinksPortableHTM\shell\open\command]
+; your browser might offer different arguments here - %1 opens just the argument given
+@="\"C:\\Portables\\Plinks\\Plinks.exe\" \"%1\""

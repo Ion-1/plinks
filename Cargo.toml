@@ -1,0 +1,28 @@
+[package]
+name = "Plinks"
+version = "0.1.0"
+edition = "2021"
+description = "A browser stand-in to allow you to choose which browsers / profiles to open links in."
+license = "Apache-2.0"
+
+[dependencies]
+ini-roundtrip = "0.2.0"
+simplelog = "0.12.2"
+log = "0.4.25"
+serde = { version = "1.0.217", features = ["derive"] }
+directories = "6.0.0"
+confy = "0.6.1  "
+clap = { version = "4.5.30", features = ["derive"] }
+inquire = { version = "0.7.5", optional = true }
+qmetaobject = { version = "0.2.10", optional = true }
+panic = "0.4.0"
+
+[features]
+default = ["CLI", "portable"]
+CLI = ["inquire"]
+GUI = ["qmetaobject"]
+portable = []
+
+[profile.release]
+strip = true
+lto = true
